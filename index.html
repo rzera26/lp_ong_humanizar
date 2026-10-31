@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONG Humanizar | Transformando Vidas no Lauzane Paulista</title>
+    <title>ONG Humanizar | Existimos para ajudar pessoas a se reencontrar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0F766E;
-            --primary-light: #14B8A6;
-            --primary-dark: #115E59;
+            --primary: #1D4ED8;
+            --primary-light: #3B82F6;
+            --primary-dark: #1E3A8A;
+            --primary-soft: #EFF6FF;
             --accent: #F59E0B;
             --accent-hover: #D97706;
             --bg-light: #F8FAFC;
@@ -20,9 +21,10 @@
             --white: #FFFFFF;
             --whatsapp: #25D366;
             --whatsapp-dark: #128C7E;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 25px -5px rgba(15, 118, 110, 0.12), 0 8px 10px -6px rgba(15, 118, 110, 0.08);
-            --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.15);
+            --facebook: #1877F2;
+            --shadow-sm: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 12px 28px -6px rgba(29, 78, 216, 0.15), 0 8px 12px -6px rgba(29, 78, 216, 0.08);
+            --shadow-lg: 0 22px 40px -12px rgba(15, 23, 42, 0.18);
             --radius: 16px;
         }
 
@@ -41,23 +43,23 @@
             overflow-x: hidden;
         }
 
-        /* Header / Navbar */
+        /* Navbar */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(12px);
             z-index: 999;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
             transition: all 0.3s ease;
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 14px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -66,29 +68,35 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
             text-decoration: none;
         }
 
-        .logo-icon {
+        .logo img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-fallback {
             width: 40px;
             height: 40px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            display: flex;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+            font-size: 1.15rem;
+            font-weight: 800;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 26px;
             list-style: none;
             align-items: center;
         }
@@ -106,25 +114,25 @@
         }
 
         .btn-nav {
-            background: var(--accent);
+            background: var(--primary);
             color: var(--white) !important;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 999px;
             font-weight: 700 !important;
-            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
             transition: transform 0.2s, background 0.2s !important;
         }
 
         .btn-nav:hover {
-            background: var(--accent-hover);
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            padding: 140px 24px 80px;
-            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 45%),
-                        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.08), transparent 40%),
+            padding: 140px 24px 85px;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 48%),
+                        radial-gradient(circle at bottom left, rgba(29, 78, 216, 0.08), transparent 42%),
                         var(--white);
         }
 
@@ -141,17 +149,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(15, 118, 110, 0.1);
-            color: var(--primary-dark);
-            padding: 6px 14px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            padding: 7px 16px;
             border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .hero h1 {
-            font-size: 3.1rem;
+            font-size: 3rem;
             line-height: 1.15;
             font-weight: 800;
             color: var(--text-dark);
@@ -161,19 +170,18 @@
 
         .hero h1 span {
             color: var(--primary);
-            position: relative;
         }
 
         .hero p {
-            font-size: 1.12rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 32px;
-            max-width: 560px;
+            max-width: 580px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
@@ -202,11 +210,11 @@
         .btn-secondary {
             background: var(--white);
             color: var(--text-dark);
-            padding: 15px 28px;
+            padding: 15px 26px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            border: 2px solid #E2E8F0;
+            border: 2px solid #CBD5E1;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -233,21 +241,21 @@
         .hero-card::before {
             content: '';
             position: absolute;
-            width: 220px;
-            height: 220px;
-            background: rgba(255, 255, 255, 0.07);
+            width: 240px;
+            height: 240px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 50%;
-            top: -60px;
-            right: -60px;
+            top: -70px;
+            right: -70px;
         }
 
         .hero-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.45rem;
+            margin-bottom: 10px;
         }
 
         .hero-card p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.88);
             font-size: 0.95rem;
             margin-bottom: 24px;
         }
@@ -256,7 +264,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
-            margin-top: 20px;
         }
 
         .stat-box {
@@ -264,22 +271,22 @@
             backdrop-filter: blur(8px);
             padding: 16px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .stat-box strong {
             display: block;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 800;
-            color: #FCD34D;
+            color: #FDE047;
         }
 
         .stat-box span {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.95);
         }
 
-        /* Section Generic */
+        /* Generic Sections */
         section {
             padding: 80px 24px;
         }
@@ -291,14 +298,14 @@
 
         .section-header {
             text-align: center;
-            max-width: 680px;
-            margin: 0 auto 56px;
+            max-width: 720px;
+            margin: 0 auto 52px;
         }
 
         .section-header h2 {
-            font-size: 2.25rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             color: var(--text-dark);
         }
 
@@ -307,136 +314,240 @@
             font-size: 1.05rem;
         }
 
-        /* Causas / Atividades */
+        /* Services / Projects Cards */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 24px;
         }
 
         .cause-card {
             background: var(--white);
-            padding: 32px;
+            padding: 30px;
             border-radius: var(--radius);
             box-shadow: var(--shadow-sm);
             border: 1px solid #E2E8F0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .cause-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-md);
-            border-color: rgba(20, 184, 166, 0.4);
+            border-color: rgba(59, 130, 246, 0.4);
         }
 
         .cause-icon {
             width: 54px;
             height: 54px;
             border-radius: 14px;
-            background: rgba(20, 184, 166, 0.12);
+            background: var(--primary-soft);
             color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .cause-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
+            font-size: 1.22rem;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
 
         .cause-card p {
             color: var(--text-muted);
+            font-size: 0.94rem;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Journey Steps */
+        .journey-section {
+            background: var(--white);
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .journey-step {
+            background: var(--bg-light);
+            border: 1px solid #E2E8F0;
+            padding: 24px;
+            border-radius: 14px;
+            position: relative;
+        }
+
+        .step-num {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+
+        .journey-step h4 {
+            font-size: 1.08rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .journey-step p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Testimonial */
+        .testimonial-box {
+            margin-top: 52px;
+            background: var(--primary-soft);
+            border-left: 5px solid var(--primary);
+            padding: 28px 32px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .testimonial-box blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .testimonial-box cite {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary-dark);
             font-size: 0.95rem;
         }
 
-        /* Donation / Pix Section */
+        /* Donation / Pix & Bank Section */
         .donation-section {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
             color: var(--white);
             border-radius: 28px;
-            padding: 56px 40px;
+            padding: 52px 40px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 44px;
             align-items: center;
             box-shadow: var(--shadow-lg);
         }
 
         .donation-info h2 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             margin-bottom: 16px;
             line-height: 1.2;
         }
 
         .donation-info p {
-            color: #CBD5E1;
+            color: #DBEAFE;
             margin-bottom: 24px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
         }
 
-        .donation-list {
-            list-style: none;
+        .bank-details-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+        }
+
+        .bank-details-card h4 {
+            color: #FDE047;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .bank-grid {
             display: grid;
-            gap: 12px;
-            margin-bottom: 28px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.95rem;
         }
 
-        .donation-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #E2E8F0;
-            font-size: 0.95rem;
+        .bank-grid div strong {
+            color: #93C5FD;
+            display: block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
         }
 
         .pix-card {
             background: var(--white);
             color: var(--text-dark);
-            padding: 36px;
+            padding: 34px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
         }
 
         .pix-badge {
             display: inline-block;
-            background: #ECFDF5;
-            color: #047857;
+            background: var(--primary-soft);
+            color: var(--primary);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             padding: 6px 16px;
             border-radius: 999px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .pix-card h3 {
             font-size: 1.4rem;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .pix-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .pix-box {
             background: #F1F5F9;
-            border: 2px dashed #CBD5E1;
+            border: 2px dashed #93C5FD;
             padding: 16px;
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
 
         .pix-label {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--text-muted);
@@ -450,33 +561,56 @@
             letter-spacing: 0.5px;
         }
 
+        .copy-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
         .btn-copy {
             width: 100%;
-            background: var(--accent);
+            background: var(--primary);
             color: var(--white);
             border: none;
-            padding: 16px;
+            padding: 15px;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.98rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             transition: background 0.2s, transform 0.2s;
         }
 
         .btn-copy:hover {
-            background: var(--accent-hover);
+            background: var(--primary-dark);
             transform: translateY(-2px);
+        }
+
+        .btn-copy-secondary {
+            width: 100%;
+            background: #F1F5F9;
+            color: var(--text-dark);
+            border: 1px solid #CBD5E1;
+            padding: 11px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.86rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-copy-secondary:hover {
+            background: #E2E8F0;
         }
 
         .copy-feedback {
             margin-top: 12px;
             font-size: 0.88rem;
-            font-weight: 600;
-            color: #059669;
+            font-weight: 700;
+            color: #16A34A;
             min-height: 22px;
             opacity: 0;
             transition: opacity 0.25s;
@@ -486,10 +620,10 @@
             opacity: 1;
         }
 
-        /* Location / Territory Section */
+        /* Location & Contact Section */
         .location-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.05fr 0.95fr;
             gap: 32px;
             background: var(--white);
             padding: 36px;
@@ -501,18 +635,19 @@
 
         .location-details h3 {
             font-size: 1.5rem;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
         }
 
         .location-item {
             display: flex;
             align-items: flex-start;
             gap: 14px;
-            margin-top: 18px;
+            margin-top: 16px;
         }
 
         .location-icon {
-            background: rgba(15, 118, 110, 0.1);
+            background: var(--primary-soft);
             color: var(--primary);
             width: 42px;
             height: 42px;
@@ -521,12 +656,47 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+        }
+
+        .location-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .location-item a:hover {
+            text-decoration: underline;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-fb {
+            background: var(--facebook);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-fb:hover {
+            opacity: 0.92;
         }
 
         .map-frame {
             width: 100%;
-            height: 280px;
+            height: 330px;
             border-radius: 14px;
             border: none;
             background: #E2E8F0;
@@ -545,6 +715,11 @@
             color: var(--white);
         }
 
+        footer a {
+            color: #93C5FD;
+            text-decoration: none;
+        }
+
         /* Floating WhatsApp Widget & Popup */
         .wa-floating-container {
             position: fixed;
@@ -557,10 +732,10 @@
         }
 
         .wa-popup {
-            width: 330px;
+            width: 340px;
             background: var(--white);
             border-radius: 20px;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
             overflow: hidden;
             margin-bottom: 16px;
             transform: translateY(20px) scale(0.95);
@@ -577,7 +752,7 @@
         }
 
         .wa-header {
-            background: linear-gradient(135deg, var(--whatsapp-dark), var(--whatsapp));
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: var(--white);
             padding: 18px 20px;
             display: flex;
@@ -595,7 +770,7 @@
             width: 42px;
             height: 42px;
             background: var(--white);
-            color: var(--whatsapp-dark);
+            color: var(--primary-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -624,25 +799,48 @@
         }
 
         .wa-body {
-            background: #ECE5DD;
-            padding: 20px;
+            background: #F1F5F9;
+            padding: 18px;
         }
 
         .wa-message {
             background: var(--white);
             padding: 14px 16px;
             border-radius: 0 14px 14px 14px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-dark);
             box-shadow: 0 2px 5px rgba(0,0,0,0.06);
             margin-bottom: 12px;
         }
 
+        .wa-quick-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .wa-chip {
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+            border: 1px solid #BFDBFE;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .wa-chip:hover {
+            background: #DBEAFE;
+        }
+
         .wa-number-tag {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
             text-align: center;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             padding: 6px;
             border-radius: 8px;
             font-weight: 600;
@@ -662,12 +860,12 @@
             border: 1px solid #CBD5E1;
             border-radius: 10px;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             outline: none;
         }
 
         .wa-input:focus {
-            border-color: var(--whatsapp-dark);
+            border-color: var(--primary);
         }
 
         .wa-send-btn {
@@ -682,7 +880,6 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            text-decoration: none;
             font-size: 0.95rem;
             transition: background 0.2s;
         }
@@ -737,13 +934,16 @@
                 grid-template-columns: 1fr;
             }
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.25rem;
             }
             .nav-links {
                 display: none;
             }
             .donation-section {
                 padding: 36px 24px;
+            }
+            .bank-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -754,13 +954,17 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">♥</div>
-                ONG Humanizar
+                <img src="https://onghumanizar.org.br/wp-content/themes/humanizar/img/common/logo-ong-humanizar.png" 
+                     alt="Logo ONG Humanizar" 
+                     onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='inline-flex';">
+                <span id="logoFallback" class="logo-fallback" style="display:none;">H</span>
+                <span>ONG Humanizar</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#atuacao">Como Atuamos</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#servicos">Projetos e Serviços</a></li>
                 <li><a href="#doar">Como Ajudar</a></li>
-                <li><a href="#territorio">Onde Estamos</a></li>
+                <li><a href="#contato">Contato</a></li>
                 <li><a href="#doar" class="btn-nav">Doar via Pix</a></li>
             </ul>
         </div>
@@ -770,141 +974,243 @@
     <section class="hero">
         <div class="hero-container">
             <div>
-                <div class="badge">📍 Lauzane Paulista • Zona Norte de SP</div>
-                <h1>Acolhendo famílias e <span>transformando realidades</span> na nossa comunidade.</h1>
-                <p>A ONG Humanizar atua diretamente no apoio social a famílias em situação de vulnerabilidade, promovendo segurança alimentar, acolhimento comunitário e cidadania.</p>
+                <div class="badge">💙 Associação Humanizar • Desde 2015 no Lauzane Paulista</div>
+                <h1>Existimos para ajudar pessoas a <span>se reencontrar!</span></h1>
+                <p>Apoiamos a reabilitação, a capacitação profissional e a ressocialização de pessoas que buscam vencer a dependência química, reconstruindo sua dignidade e conquistando um novo começo.</p>
                 <div class="hero-buttons">
-                    <a href="#doar" class="btn-primary">Quero Fazer uma Doação</a>
-                    <button class="btn-secondary" onclick="toggleWaPopup()">Seja Voluntário(a)</button>
+                    <a href="#doar" class="btn-primary">Quero Ajudar com Pix / Depósito</a>
+                    <button class="btn-secondary" onclick="openWaWithTopic('Olá! Gostaria de doar móveis/itens ou conhecer a ONG Humanizar.')">
+                        Doar Itens ou Solicitar Carreto
+                    </button>
                 </div>
             </div>
 
             <div class="hero-card">
-                <h3>Impacto Direto no Território</h3>
-                <p>Cada contribuição chega diretamente às famílias cadastradas na nossa rede de apoio no Lauzane Paulista.</p>
+                <h3>Nossa Missão em Números</h3>
+                <p>Renovando corpo, mente e espírito por meio do acolhimento, treinamento profissional e trabalho digno.</p>
                 <div class="stats-grid">
                     <div class="stat-box">
-                        <strong>+150</strong>
-                        <span>Pessoas atendidas mensalmente</span>
+                        <strong>+50</strong>
+                        <span>Pessoas recuperadas</span>
                     </div>
                     <div class="stat-box">
-                        <strong>100%</strong>
-                        <span>Doações revertidas à comunidade</span>
+                        <strong>+30</strong>
+                        <span>Em capacitação para emprego</span>
                     </div>
                     <div class="stat-box">
-                        <strong>Apoio</strong>
-                        <span>Alimentos, roupas e acolhimento</span>
+                        <strong>+6</strong>
+                        <span>Pessoas em tratamento</span>
                     </div>
                     <div class="stat-box">
-                        <strong>Rede</strong>
-                        <span>Voluntários e parceiros locais</span>
+                        <strong>+3</strong>
+                        <span>Recuperados atuando na ONG</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Frentes de Atuação -->
-    <section id="atuacao">
+    <!-- Projetos e Serviços -->
+    <section id="servicos">
         <div class="container">
             <div class="section-header">
-                <h2>Nossas Frentes de Ação</h2>
-                <p>Conheça as iniciativas mantidas com o apoio de moradores, voluntários e parceiros da região.</p>
+                <h2>Nossas Frentes e Serviços</h2>
+                <p>Mais do que reabilitação, criamos oportunidades reais de trabalho e geração de renda para sustentar a missão da Associação Humanizar.</p>
             </div>
 
             <div class="cards-grid">
                 <div class="cause-card">
-                    <div class="cause-icon">🍲</div>
-                    <h3>Segurança Alimentar</h3>
-                    <p>Arrecadação e distribuição de cestas básicas, alimentos e itens de primeira necessidade para famílias em vulnerabilidade socioeconômica.</p>
+                    <div>
+                        <div class="cause-icon">🛋️</div>
+                        <h3>A Loja Humanizar</h3>
+                        <p>Recebemos, reformamos e vendemos móveis, roupas e objetos doados em nossa loja exclusiva. 100% da renda é revertida para manter a ONG e empregar ex-dependentes químicos recuperados.</p>
+                    </div>
+                    <button class="card-link" onclick="openWaWithTopic('Olá! Quero saber mais sobre a Loja Humanizar ou doar itens.')">
+                        Doar itens ou conhecer a loja →
+                    </button>
                 </div>
 
                 <div class="cause-card">
-                    <div class="cause-icon">🤝</div>
-                    <h3>Acolhimento e Cidadania</h3>
-                    <p>Escuta ativa, orientação sobre acesso a direitos básicos, fortalecimento de vínculos comunitários e encaminhamento para redes de proteção.</p>
+                    <div>
+                        <div class="cause-icon">🚚</div>
+                        <h3>O Carreto Humanizar</h3>
+                        <p>Realizamos carretos, mudanças e retirada gratuita de doações em toda a Capital e Grande São Paulo. Ao contratar nosso frete, você tem um serviço ágil e apoia diretamente nossa causa.</p>
+                    </div>
+                    <button class="card-link" onclick="openWaWithTopic('Olá! Gostaria de pedir um orçamento do Carreto Humanizar.')">
+                        Pedir orçamento de carreto →
+                    </button>
                 </div>
 
                 <div class="cause-card">
-                    <div class="cause-icon">👕</div>
-                    <h3>Campanhas Solidárias</h3>
-                    <p>Mobilização permanente de doações de roupas, calçados, brinquedos, kits de higiene e materiais escolares para crianças e jovens do bairro.</p>
+                    <div>
+                        <div class="cause-icon">🛠️</div>
+                        <h3>Cursos e Tapeçaria</h3>
+                        <p>Oferecemos capacitação prática em reforma de estofados, tapeçaria e atendimento para que aqueles que concluem o tratamento tenham uma profissão e retornem ao mercado de trabalho.</p>
+                    </div>
+                    <button class="card-link" onclick="openWaWithTopic('Olá! Gostaria de saber mais sobre os serviços de tapeçaria e cursos.')">
+                        Solicitar serviço ou apoiar →
+                    </button>
+                </div>
+
+                <div class="cause-card">
+                    <div>
+                        <div class="cause-icon">🤝</div>
+                        <h3>Reabilitação e Voluntariado</h3>
+                        <p>Desde 2015 atuamos no acolhimento humanizado, encaminhamento para casa de reabilitação e acompanhamento contínuo com voluntários comprometidos com a transformação de vidas.</p>
+                    </div>
+                    <button class="card-link" onclick="openWaWithTopic('Olá! Gostaria de ser voluntário(a) na ONG Humanizar.')">
+                        Quero ser voluntário(a) →
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Doação / Pix -->
+    <!-- Quem Somos / Jornada -->
+    <section id="quem-somos" class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Transformamos Vidas</h2>
+                <p>Desde 2015, construímos uma jornada completa que vai do primeiro pedido de socorro até a autonomia financeira e reinserção social.</p>
+            </div>
+
+            <div class="journey-grid">
+                <div class="journey-step">
+                    <span class="step-num">Etapa 1</span>
+                    <h4>Abordagem e Escuta</h4>
+                    <p>Acolhimento sem preconceitos a pessoas em situação de rua ou vulnerabilidade que buscam ajuda para vencer o vício.</p>
+                </div>
+                <div class="journey-step">
+                    <span class="step-num">Etapa 2</span>
+                    <h4>Casa de Reabilitação</h4>
+                    <p>Acompanhamento terapêutico e cuidado integral para restaurar a saúde física, emocional e familiar.</p>
+                </div>
+                <div class="journey-step">
+                    <span class="step-num">Etapa 3</span>
+                    <h4>Capacitação Prática</h4>
+                    <p>Treinamento com voluntários em reforma de móveis, tapeçaria, logística de doações e atendimento.</p>
+                </div>
+                <div class="journey-step">
+                    <span class="step-num">Etapa 4</span>
+                    <h4>Autonomia e Trabalho</h4>
+                    <p>Atuação na Loja e no Carreto Humanizar, gerando renda digna para o colaborador e sustentabilidade para a ONG.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <blockquote>
+                    “A ONG Humanizar foi fundamental na minha vida, eu a conheci quando ninguém mais confiava em mim, minha família me abandonou e eu não tinha para onde ir. Hoje eu reconquistei minha dignidade e o respeito das pessoas que eu me importo.”
+                </blockquote>
+                <cite>— João Paulo, acolhido e transformado pela ONG Humanizar</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doação: Pix e Conta Itaú -->
     <section id="doar">
         <div class="container">
             <div class="donation-section">
                 <div class="donation-info">
-                    <h2>Sua doação mantém esse trabalho vivo</h2>
-                    <p>Você pode apoiar a ONG Humanizar de forma rápida e segura pelo Pix ou entrando em contato para entregar doações físicas diretamente na nossa sede.</p>
-                    <ul class="donation-list">
-                        <li>✅ Doação rápida de qualquer valor via Pix</li>
-                        <li>✅ Entrega presencial de alimentos não perecíveis e roupas</li>
-                        <li>✅ Cadastro aberto para novos voluntários do bairro</li>
-                    </ul>
+                    <h2>Ajude-nos a continuar essa missão</h2>
+                    <p>Sua contribuição financeira mantém os tratamentos, as oficinas profissionalizantes e toda a estrutura de acolhimento da Associação Humanizar.</p>
+
+                    <div class="bank-details-card">
+                        <h4>🏦 Dados para Depósito ou Transferência (TED/DOC)</h4>
+                        <div class="bank-grid">
+                            <div>
+                                <strong>Razão Social</strong>
+                                Associação Humanizar
+                            </div>
+                            <div>
+                                <strong>CNPJ</strong>
+                                24.591.115/0001-66
+                            </div>
+                            <div>
+                                <strong>Banco</strong>
+                                Itaú (341)
+                            </div>
+                            <div>
+                                <strong>Agência e Conta Corrente</strong>
+                                Ag: 0036 | CC: 10178-0
+                            </div>
+                        </div>
+                    </div>
+
                     <button class="btn-primary" onclick="toggleWaPopup()" style="background: var(--whatsapp); color: #fff;">
-                        Falar com a Equipe no WhatsApp
+                        💬 Falar pelo WhatsApp (11) 93740-3325
                     </button>
                 </div>
 
                 <div class="pix-card">
-                    <span class="pix-badge">Doação Instantânea • PIX</span>
-                    <h3>Contribua Agora</h3>
-                    <p>Copie a chave Pix oficial abaixo e faça sua doação pelo aplicativo do seu banco:</p>
+                    <span class="pix-badge">Doação Instantânea • Chave PIX</span>
+                    <h3>Doe pelo PIX (CNPJ)</h3>
+                    <p>Copie o CNPJ da Associação Humanizar abaixo e realize sua doação no aplicativo do seu banco:</p>
 
                     <div class="pix-box">
-                        <span class="pix-label">Chave Pix (CPF)</span>
-                        <span class="pix-key" id="pixKeyText">000.000.000-00</span>
+                        <span class="pix-label">Chave Pix Oficial (CNPJ)</span>
+                        <span class="pix-key" id="pixKeyText">24.591.115/0001-66</span>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">Favorecido: Associação Humanizar • Banco Itaú</span>
                     </div>
 
-                    <button class="btn-copy" onclick="copyPixKey()">
-                        <span>📋</span> Copiar Chave Pix (CPF: 000.000.000-00)
-                    </button>
-                    <div class="copy-feedback" id="copyFeedback">✔ Chave Pix copiada com sucesso!</div>
+                    <div class="copy-buttons-group">
+                        <button class="btn-copy" onclick="copyPixKey('24.591.115/0001-66')">
+                            📋 Copiar CNPJ (24.591.115/0001-66)
+                        </button>
+                        <button class="btn-copy-secondary" onclick="copyPixKey('24591115000166')">
+                            Copiar apenas números (24591115000166)
+                        </button>
+                    </div>
+                    <div class="copy-feedback" id="copyFeedback">✔ Chave Pix copiada para a área de transferência!</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Onde Estamos / Território -->
-    <section id="territorio">
+    <!-- Localização e Contatos -->
+    <section id="contato">
         <div class="container">
             <div class="section-header">
-                <h2>Visite Nossa Sede</h2>
-                <p>Estamos de portas abertas no Lauzane Paulista para receber doações, voluntários e moradores.</p>
+                <h2>Onde Estamos e Contatos</h2>
+                <p>Visite nossa sede no Lauzane Paulista, entregue sua doação ou fale diretamente com nossa equipe.</p>
             </div>
 
             <div class="location-grid">
                 <div class="location-details">
-                    <h3>ONG Humanizar</h3>
-                    <p style="color: var(--text-muted);">Ponto de encontro, solidariedade e apoio comunitário na Zona Norte de São Paulo.</p>
+                    <h3>Associação Humanizar</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">CNPJ: 24.591.115/0001-66</p>
 
                     <div class="location-item">
                         <div class="location-icon">📍</div>
                         <div>
-                            <strong>Endereço Completo</strong>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">Rua Lacerda Marques, 843 - Lauzane Paulista<br>São Paulo - SP, CEP: 02441-200</p>
+                            <strong>Endereço da Sede</strong>
+                            <p style="color: var(--text-muted); font-size: 0.94rem;">Rua Lacerda Marques, 843 - Lauzane Paulista<br>São Paulo - SP, CEP: 02441-200</p>
                         </div>
                     </div>
 
                     <div class="location-item">
                         <div class="location-icon">📱</div>
                         <div>
-                            <strong>WhatsApp de Atendimento</strong>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">+55 11 99999-999</p>
+                            <strong>WhatsApp Oficial</strong>
+                            <p style="font-size: 0.95rem;">
+                                <a href="https://wa.me/5511937403325" target="_blank" rel="noopener">(11) 93740-3325</a>
+                            </p>
                         </div>
                     </div>
 
                     <div class="location-item">
-                        <div class="location-icon">💳</div>
+                        <div class="location-icon">✉️</div>
                         <div>
-                            <strong>Chave Pix para Doações</strong>
-                            <p style="color: var(--text-muted); font-size: 0.95rem;">CPF: 000.000.000-00</p>
+                            <strong>E-mail</strong>
+                            <p style="font-size: 0.95rem;">
+                                <a href="mailto:contato@onghumanizar.org.br">contato@onghumanizar.org.br</a>
+                            </p>
                         </div>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/associacaohumanizar/" target="_blank" rel="noopener noreferrer" class="btn-fb">
+                            👍 Facebook Oficial (@associacaohumanizar)
+                        </a>
                     </div>
                 </div>
 
@@ -921,8 +1227,10 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p><strong>ONG Humanizar</strong> — Rua Lacerda Marques, 843 - Lauzane Paulista, São Paulo - SP, 02441-200</p>
-            <p style="margin-top: 8px; font-size: 0.82rem;">Projeto de Extensão Universitária • Tecnologia Social e Transformação Digital</p>
+            <p><strong>Associação Humanizar (ONG Humanizar)</strong> • CNPJ: 24.591.115/0001-66</p>
+            <p style="margin-top: 6px;">Rua Lacerda Marques, 843 - Lauzane Paulista, São Paulo - SP, CEP 02441-200</p>
+            <p style="margin-top: 6px;">WhatsApp: <a href="https://wa.me/5511937403325" target="_blank">(11) 93740-3325</a> | E-mail: <a href="mailto:contato@onghumanizar.org.br">contato@onghumanizar.org.br</a> | <a href="https://www.facebook.com/associacaohumanizar/" target="_blank">Facebook</a></p>
+            <p style="margin-top: 14px; font-size: 0.8rem; opacity: 0.75;">Projeto de Extensão Universitária — Inovação, Ciência e Transformação Digital</p>
         </div>
     </footer>
 
@@ -934,17 +1242,23 @@
                     <div class="wa-avatar">H</div>
                     <div class="wa-profile-info">
                         <h4>ONG Humanizar</h4>
-                        <span>Online • Lauzane Paulista</span>
+                        <span>Atendimento • (11) 93740-3325</span>
                     </div>
                 </div>
                 <button class="wa-close" onclick="toggleWaPopup()" aria-label="Fechar">✕</button>
             </div>
             <div class="wa-body">
                 <div class="wa-message">
-                    Olá! 👋 Bem-vindo(a) à <strong>ONG Humanizar</strong>.<br><br>
-                    Como podemos ajudar hoje? Você pode tirar dúvidas sobre doações, voluntariado ou nossos atendimentos!
+                    Olá! 👋 Bem-vindo(a) à <strong>Associação Humanizar</strong>.<br><br>
+                    Como podemos ajudar você hoje? Escolha uma opção abaixo ou escreva sua mensagem:
                 </div>
-                <div class="wa-number-tag">📞 WhatsApp: +55 11 99999-999</div>
+                <div class="wa-quick-options">
+                    <button class="wa-chip" onclick="setWaMessage('Olá! Quero fazer uma doação ou enviar comprovante Pix.')">💙 Fazer Doação</button>
+                    <button class="wa-chip" onclick="setWaMessage('Olá! Gostaria de agendar retirada de doações / orçamento de Carreto.')">🚚 Carreto / Retirada</button>
+                    <button class="wa-chip" onclick="setWaMessage('Olá! Quero conhecer a Loja Humanizar.')">🛋️ Loja Humanizar</button>
+                    <button class="wa-chip" onclick="setWaMessage('Olá! Gostaria de ser voluntário(a) na ONG Humanizar.')">🤝 Ser Voluntário</button>
+                </div>
+                <div class="wa-number-tag">📞 WhatsApp: (11) 93740-3325</div>
             </div>
             <div class="wa-footer">
                 <input type="text" id="waCustomMessage" class="wa-input" value="Olá! Gostaria de saber como posso ajudar a ONG Humanizar." />
@@ -961,30 +1275,28 @@
     </div>
 
     <script>
-        // Copiar Chave Pix
-        function copyPixKey() {
-            const pixKey = "000.000.000-00";
-            navigator.clipboard.writeText(pixKey).then(() => {
-                const feedback = document.getElementById('copyFeedback');
-                feedback.classList.add('show');
-                setTimeout(() => {
-                    feedback.classList.remove('show');
-                }, 3500);
+        // Copiar Chave Pix (CNPJ)
+        function copyPixKey(valueToCopy) {
+            navigator.clipboard.writeText(valueToCopy).then(() => {
+                showCopyFeedback(valueToCopy);
             }).catch(() => {
-                // Fallback caso seja aberto via arquivo local sem HTTPS
                 const tempInput = document.createElement("input");
-                tempInput.value = pixKey;
+                tempInput.value = valueToCopy;
                 document.body.appendChild(tempInput);
                 tempInput.select();
                 document.execCommand("copy");
                 document.body.removeChild(tempInput);
-
-                const feedback = document.getElementById('copyFeedback');
-                feedback.classList.add('show');
-                setTimeout(() => {
-                    feedback.classList.remove('show');
-                }, 3500);
+                showCopyFeedback(valueToCopy);
             });
+        }
+
+        function showCopyFeedback(val) {
+            const feedback = document.getElementById('copyFeedback');
+            feedback.textContent = `✔ Chave Pix (${val}) copiada com sucesso!`;
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3500);
         }
 
         // Abrir / Fechar Popup de WhatsApp
@@ -993,9 +1305,27 @@
             popup.classList.toggle('active');
         }
 
-        // Enviar mensagem para o WhatsApp configurado (+55 11 99999-999)
+        // Preencher mensagem rápida no Popup
+        function setWaMessage(msg) {
+            const input = document.getElementById('waCustomMessage');
+            input.value = msg;
+            input.focus();
+        }
+
+        // Abrir popup já com assunto específico a partir dos cards da página
+        function openWaWithTopic(msg) {
+            const popup = document.getElementById('waPopup');
+            const input = document.getElementById('waCustomMessage');
+            input.value = msg;
+            if (!popup.classList.contains('active')) {
+                popup.classList.add('active');
+            }
+            input.focus();
+        }
+
+        // Enviar para o WhatsApp oficial: (11) 93740-3325
         function sendWhatsApp() {
-            const phone = "551199999999";
+            const phone = "5511937403325";
             const msgInput = document.getElementById('waCustomMessage').value;
             const encodedMsg = encodeURIComponent(msgInput || "Olá! Vim pela página da ONG Humanizar.");
             window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
