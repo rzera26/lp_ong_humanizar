@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Humanizar | Transformando Vidas no Lauzane Paulista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F766E;
+            --primary-light: #14B8A6;
+            --primary-dark: #115E59;
+            --accent: #F59E0B;
+            --accent-hover: #D97706;
+            --bg-light: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --white: #FFFFFF;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #128C7E;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(15, 118, 110, 0.12), 0 8px 10px -6px rgba(15, 118, 110, 0.08);
+            --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.15);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 999;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+            transition: transform 0.2s, background 0.2s !important;
+        }
+
+        .btn-nav:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 24px 80px;
+            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.08), transparent 40%),
+                        var(--white);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 118, 110, 0.1);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.1rem;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 15px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid #E2E8F0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+            border-radius: 24px;
+            padding: 36px;
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            top: -60px;
+            right: -60px;
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #FCD34D;
+        }
+
+        .stat-box span {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Section Generic */
+        section {
+            padding: 80px 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Causas / Atividades */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .cause-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(20, 184, 166, 0.4);
+        }
+
+        .cause-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(20, 184, 166, 0.12);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .cause-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .cause-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Donation / Pix Section */
+        .donation-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--white);
+            border-radius: 28px;
+            padding: 56px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .donation-info h2 {
+            font-size: 2.3rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .donation-info p {
+            color: #CBD5E1;
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .donation-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .donation-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #E2E8F0;
+            font-size: 0.95rem;
+        }
+
+        .pix-card {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 36px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .pix-badge {
+            display: inline-block;
+            background: #ECFDF5;
+            color: #047857;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+        }
+
+        .pix-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .pix-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .pix-box {
+            background: #F1F5F9;
+            border: 2px dashed #CBD5E1;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .pix-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .pix-key {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-copy {
+            width: 100%;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-copy:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .copy-feedback {
+            margin-top: 12px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #059669;
+            min-height: 22px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .copy-feedback.show {
+            opacity: 1;
+        }
+
+        /* Location / Territory Section */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            background: var(--white);
+            padding: 36px;
+            border-radius: var(--radius);
+            border: 1px solid #E2E8F0;
+            box-shadow: var(--shadow-sm);
+            align-items: center;
+        }
+
+        .location-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .location-icon {
+            background: rgba(15, 118, 110, 0.1);
+            color: var(--primary);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 280px;
+            border-radius: 14px;
+            border: none;
+            background: #E2E8F0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0F172A;
+            color: #94A3B8;
+            padding: 48px 24px 32px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* Floating WhatsApp Widget & Popup */
+        .wa-floating-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .wa-popup {
+            width: 330px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+            overflow: hidden;
+            margin-bottom: 16px;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #E2E8F0;
+        }
+
+        .wa-popup.active {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .wa-header {
+            background: linear-gradient(135deg, var(--whatsapp-dark), var(--whatsapp));
+            color: var(--white);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .wa-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .wa-avatar {
+            width: 42px;
+            height: 42px;
+            background: var(--white);
+            color: var(--whatsapp-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .wa-profile-info h4 {
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .wa-profile-info span {
+            font-size: 0.78rem;
+            opacity: 0.9;
+        }
+
+        .wa-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+
+        .wa-body {
+            background: #ECE5DD;
+            padding: 20px;
+        }
+
+        .wa-message {
+            background: var(--white);
+            padding: 14px 16px;
+            border-radius: 0 14px 14px 14px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+        }
+
+        .wa-number-tag {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.75);
+            padding: 6px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .wa-footer {
+            padding: 14px 16px;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .wa-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #CBD5E1;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .wa-input:focus {
+            border-color: var(--whatsapp-dark);
+        }
+
+        .wa-send-btn {
+            background: var(--whatsapp);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .wa-send-btn:hover {
+            background: var(--whatsapp-dark);
+        }
+
+        .wa-trigger {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: var(--whatsapp);
+            color: var(--white);
+            border: none;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: transform 0.25s ease;
+            position: relative;
+        }
+
+        .wa-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        .wa-notification {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #EF4444;
+            color: var(--white);
+            width: 22px;
+            height: 22px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container,
+            .donation-section,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .donation-section {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">♥</div>
+                ONG Humanizar
+            </a>
+            <ul class="nav-links">
+                <li><a href="#atuacao">Como Atuamos</a></li>
+                <li><a href="#doar">Como Ajudar</a></li>
+                <li><a href="#territorio">Onde Estamos</a></li>
+                <li><a href="#doar" class="btn-nav">Doar via Pix</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="badge">📍 Lauzane Paulista • Zona Norte de SP</div>
+                <h1>Acolhendo famílias e <span>transformando realidades</span> na nossa comunidade.</h1>
+                <p>A ONG Humanizar atua diretamente no apoio social a famílias em situação de vulnerabilidade, promovendo segurança alimentar, acolhimento comunitário e cidadania.</p>
+                <div class="hero-buttons">
+                    <a href="#doar" class="btn-primary">Quero Fazer uma Doação</a>
+                    <button class="btn-secondary" onclick="toggleWaPopup()">Seja Voluntário(a)</button>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <h3>Impacto Direto no Território</h3>
+                <p>Cada contribuição chega diretamente às famílias cadastradas na nossa rede de apoio no Lauzane Paulista.</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <strong>+150</strong>
+                        <span>Pessoas atendidas mensalmente</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>100%</strong>
+                        <span>Doações revertidas à comunidade</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>Apoio</strong>
+                        <span>Alimentos, roupas e acolhimento</span>
+                    </div>
+                    <div class="stat-box">
+                        <strong>Rede</strong>
+                        <span>Voluntários e parceiros locais</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frentes de Atuação -->
+    <section id="atuacao">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas Frentes de Ação</h2>
+                <p>Conheça as iniciativas mantidas com o apoio de moradores, voluntários e parceiros da região.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="cause-card">
+                    <div class="cause-icon">🍲</div>
+                    <h3>Segurança Alimentar</h3>
+                    <p>Arrecadação e distribuição de cestas básicas, alimentos e itens de primeira necessidade para famílias em vulnerabilidade socioeconômica.</p>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-icon">🤝</div>
+                    <h3>Acolhimento e Cidadania</h3>
+                    <p>Escuta ativa, orientação sobre acesso a direitos básicos, fortalecimento de vínculos comunitários e encaminhamento para redes de proteção.</p>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-icon">👕</div>
+                    <h3>Campanhas Solidárias</h3>
+                    <p>Mobilização permanente de doações de roupas, calçados, brinquedos, kits de higiene e materiais escolares para crianças e jovens do bairro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doação / Pix -->
+    <section id="doar">
+        <div class="container">
+            <div class="donation-section">
+                <div class="donation-info">
+                    <h2>Sua doação mantém esse trabalho vivo</h2>
+                    <p>Você pode apoiar a ONG Humanizar de forma rápida e segura pelo Pix ou entrando em contato para entregar doações físicas diretamente na nossa sede.</p>
+                    <ul class="donation-list">
+                        <li>✅ Doação rápida de qualquer valor via Pix</li>
+                        <li>✅ Entrega presencial de alimentos não perecíveis e roupas</li>
+                        <li>✅ Cadastro aberto para novos voluntários do bairro</li>
+                    </ul>
+                    <button class="btn-primary" onclick="toggleWaPopup()" style="background: var(--whatsapp); color: #fff;">
+                        Falar com a Equipe no WhatsApp
+                    </button>
+                </div>
+
+                <div class="pix-card">
+                    <span class="pix-badge">Doação Instantânea • PIX</span>
+                    <h3>Contribua Agora</h3>
+                    <p>Copie a chave Pix oficial abaixo e faça sua doação pelo aplicativo do seu banco:</p>
+
+                    <div class="pix-box">
+                        <span class="pix-label">Chave Pix (CPF)</span>
+                        <span class="pix-key" id="pixKeyText">000.000.000-00</span>
+                    </div>
+
+                    <button class="btn-copy" onclick="copyPixKey()">
+                        <span>📋</span> Copiar Chave Pix (CPF: 000.000.000-00)
+                    </button>
+                    <div class="copy-feedback" id="copyFeedback">✔ Chave Pix copiada com sucesso!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onde Estamos / Território -->
+    <section id="territorio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visite Nossa Sede</h2>
+                <p>Estamos de portas abertas no Lauzane Paulista para receber doações, voluntários e moradores.</p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-details">
+                    <h3>ONG Humanizar</h3>
+                    <p style="color: var(--text-muted);">Ponto de encontro, solidariedade e apoio comunitário na Zona Norte de São Paulo.</p>
+
+                    <div class="location-item">
+                        <div class="location-icon">📍</div>
+                        <div>
+                            <strong>Endereço Completo</strong>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Rua Lacerda Marques, 843 - Lauzane Paulista<br>São Paulo - SP, CEP: 02441-200</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-icon">📱</div>
+                        <div>
+                            <strong>WhatsApp de Atendimento</strong>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">+55 11 99999-999</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-icon">💳</div>
+                        <div>
+                            <strong>Chave Pix para Doações</strong>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">CPF: 000.000.000-00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <iframe 
+                    class="map-frame"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps?q=Rua+Lacerda+Marques,+843+-+Lauzane+Paulista,+S%C3%A3o+Paulo+-+SP,+02441-200&output=embed">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>ONG Humanizar</strong> — Rua Lacerda Marques, 843 - Lauzane Paulista, São Paulo - SP, 02441-200</p>
+            <p style="margin-top: 8px; font-size: 0.82rem;">Projeto de Extensão Universitária • Tecnologia Social e Transformação Digital</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Popup -->
+    <div class="wa-floating-container">
+        <div class="wa-popup" id="waPopup">
+            <div class="wa-header">
+                <div class="wa-profile">
+                    <div class="wa-avatar">H</div>
+                    <div class="wa-profile-info">
+                        <h4>ONG Humanizar</h4>
+                        <span>Online • Lauzane Paulista</span>
+                    </div>
+                </div>
+                <button class="wa-close" onclick="toggleWaPopup()" aria-label="Fechar">✕</button>
+            </div>
+            <div class="wa-body">
+                <div class="wa-message">
+                    Olá! 👋 Bem-vindo(a) à <strong>ONG Humanizar</strong>.<br><br>
+                    Como podemos ajudar hoje? Você pode tirar dúvidas sobre doações, voluntariado ou nossos atendimentos!
+                </div>
+                <div class="wa-number-tag">📞 WhatsApp: +55 11 99999-999</div>
+            </div>
+            <div class="wa-footer">
+                <input type="text" id="waCustomMessage" class="wa-input" value="Olá! Gostaria de saber como posso ajudar a ONG Humanizar." />
+                <button class="wa-send-btn" onclick="sendWhatsApp()">
+                    Iniciar Conversa no WhatsApp ➤
+                </button>
+            </div>
+        </div>
+
+        <button class="wa-trigger" onclick="toggleWaPopup()" aria-label="Abrir WhatsApp">
+            💬
+            <span class="wa-notification">1</span>
+        </button>
+    </div>
+
+    <script>
+        // Copiar Chave Pix
+        function copyPixKey() {
+            const pixKey = "000.000.000-00";
+            navigator.clipboard.writeText(pixKey).then(() => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.add('show');
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 3500);
+            }).catch(() => {
+                // Fallback caso seja aberto via arquivo local sem HTTPS
+                const tempInput = document.createElement("input");
+                tempInput.value = pixKey;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.add('show');
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 3500);
+            });
+        }
+
+        // Abrir / Fechar Popup de WhatsApp
+        function toggleWaPopup() {
+            const popup = document.getElementById('waPopup');
+            popup.classList.toggle('active');
+        }
+
+        // Enviar mensagem para o WhatsApp configurado (+55 11 99999-999)
+        function sendWhatsApp() {
+            const phone = "551199999999";
+            const msgInput = document.getElementById('waCustomMessage').value;
+            const encodedMsg = encodeURIComponent(msgInput || "Olá! Vim pela página da ONG Humanizar.");
+            window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
